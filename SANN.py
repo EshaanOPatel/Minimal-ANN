@@ -21,7 +21,6 @@ class NeuralNetwork:
         self.bias_output = np.random.randn(1, output_size)
     
     def forward(self, X):
-        """Forward propagation"""
         self.hidden_input = np.dot(X, self.weights_input_hidden) + self.bias_hidden
         self.hidden_output = sigmoid(self.hidden_input)
         self.final_input = np.dot(self.hidden_output, self.weights_hidden_output) + self.bias_output
@@ -29,7 +28,6 @@ class NeuralNetwork:
         return self.final_output
     
     def backward(self, X, y, output):
-        """Backward propagation"""
         error = y - output
         output_delta = error * sigmoid_derivative(output)
         
@@ -53,7 +51,7 @@ class NeuralNetwork:
     def predict(self, X):
         return self.forward(X)
 
-# Example usage
+# Ex. Usage
 if __name__ == "__main__":
     # XOR problem dataset
     X = np.array([[0, 0], [0, 1], [1, 0], [1, 1]])
