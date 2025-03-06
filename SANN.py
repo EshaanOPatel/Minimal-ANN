@@ -7,7 +7,6 @@ def sigmoid(x):
 def sigmoid_derivative(x):
     return x * (1 - x)
 
-# Neural Network class
 class NeuralNetwork:
     def __init__(self, input_size, hidden_size, output_size, learning_rate=0.1):
         self.input_size = input_size
